@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>塾生向け｜管理職候補育成プログラムのご案内</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 20mm 18mm;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
+    color: #2c2c2c;
+    line-height: 1.8;
+    font-size: 10.5pt;
+    background: #fff;
+  }
+
+  /* ── Cover ── */
+  .cover {
+    text-align: center;
+    padding: 80px 40px 60px;
+    page-break-after: always;
+  }
+  .cover-label {
+    display: inline-block;
+    background: #1a3a5c;
+    color: #fff;
+    font-size: 11pt;
+    padding: 6px 32px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+  }
+  .cover-title {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #1a3a5c;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  .cover-subtitle {
+    font-size: 13pt;
+    color: #1a3a5c;
+    margin-bottom: 50px;
+  }
+  .cover-line {
+    width: 60px;
+    height: 3px;
+    background: #c8a45a;
+    margin: 0 auto 50px;
+  }
+  .cover-intro {
+    text-align: left;
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 10.5pt;
+    line-height: 2;
+    color: #333;
+  }
+  .cover-footer {
+    margin-top: 60px;
+    font-size: 10pt;
+    color: #666;
+  }
+  .cover-footer .company {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #1a3a5c;
+  }
+
+  /* ── Content ── */
+  .content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-number {
+    display: inline-block;
+    background: #1a3a5c;
+    color: #fff;
+    font-size: 10pt;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 4px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  h2 {
+    font-size: 14pt;
+    color: #1a3a5c;
+    margin: 36px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #c8a45a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h3 {
+    font-size: 11pt;
+    color: #1a3a5c;
+    margin: 22px 0 10px;
+    padding-left: 14px;
+    border-left: 4px solid #c8a45a;
+  }
+  p {
+    margin: 10px 0;
+    text-align: justify;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 9.5pt;
+  }
+  thead th {
+    background: #1a3a5c;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 10px;
+    text-align: center;
+    border: 1px solid #1a3a5c;
+  }
+  tbody td {
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) {
+    background: #f7f9fb;
+  }
+  tbody tr.highlight {
+    background: #fffbe6;
+  }
+
+  ul {
+    margin: 8px 0 8px 24px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+
+  /* Transformation Cards */
+  .transform-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .transform-card {
+    background: #f0f4f8;
+    border-left: 4px solid #c8a45a;
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+  }
+  .transform-card .number {
+    display: inline-block;
+    background: #c8a45a;
+    color: #fff;
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 8px;
+    font-size: 9pt;
+  }
+  .transform-card .label {
+    font-weight: 700;
+    font-size: 11pt;
+    color: #1a3a5c;
+  }
+  .transform-card p {
+    margin: 6px 0 0 32px;
+    font-size: 10pt;
+  }
+
+  /* Flow */
+  .flow-box {
+    background: #fafaf5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .flow-box table {
+    margin: 0;
+  }
+  .flow-box td {
+    border: none;
+    padding: 6px 10px;
+    font-size: 10pt;
+  }
+  .flow-box td:first-child {
+    font-weight: 600;
+    color: #1a3a5c;
+    white-space: nowrap;
+    width: 100px;
+  }
+
+  /* Request Box */
+  .request-box {
+    background: #f0f4f8;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .request-box p {
+    margin: 6px 0;
+    font-size: 10.5pt;
+  }
+  .check {
+    color: #1a3a5c;
+    font-weight: 700;
+    margin-right: 6px;
+  }
+
+  /* Closing */
+  .closing {
+    background: linear-gradient(135deg, #f8f6f0, #f0f4f8);
+    border: 1px solid #d4cfc0;
+    border-radius: 8px;
+    padding: 28px 24px;
+    margin: 30px 0;
+    text-align: center;
+  }
+  .closing p {
+    text-align: center;
+    line-height: 2.2;
+    font-size: 10.5pt;
+  }
+
+  .signature {
+    text-align: right;
+    margin-top: 40px;
+    font-size: 10pt;
+    color: #555;
+  }
+  .signature .company-name {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #1a3a5c;
+  }
+
+  .note {
+    font-size: 9pt;
+    color: #888;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= 表紙 ================= -->
+<div class="cover">
+  <div class="cover-label">ご 案 内</div>
+  <h1 class="cover-title">「管理職候補育成プログラム」のご案内</h1>
+  <div class="cover-line"></div>
+  <p class="cover-subtitle" style="font-size:11pt; color:#555;">～ 次世代リーダーとしての第一歩 ～</p>
+
+  <div class="cover-intro">
+    <p>このたび、皆さんは株式会社大晃産業の将来を担う次世代リーダー候補として、「管理職候補育成プログラム」に選抜されました。</p>
+  </div>
+
+  <div class="cover-footer">
+    <p class="company">株式会社えんのした</p>
+    <p>代表取締役　川路 隆志</p>
+  </div>
+</div>
+
+<!-- ================= 本文 ================= -->
+<div class="content">
+
+  <!-- なぜこの研修を実施するのか -->
+  <h2><span class="section-number">1</span>なぜこの研修を実施するのか</h2>
+
+  <p>会社は今、大きな転換期を迎えています。これまで培ってきた「人を大切にする」企業文化を土台に、さらに成長していくためには、部門を率いるリーダーの力が不可欠です。</p>
+
+  <p>皆さんには、プレイヤーとしての優れた実績があります。しかし、これからは「自分が成果を出す」だけでなく、「チームで成果を出す」マネジメントの視点が求められます。この研修は、その転換を支援するために設計されました。</p>
+
+  <!-- なぜあなたが選ばれたのか -->
+  <h2><span class="section-number">2</span>なぜあなたが選ばれたのか</h2>
+
+  <p>皆さんが選ばれた理由は明確です。それは、会社が皆さんの可能性を信じ、将来の経営を任せたいと考えているからです。</p>
+
+  <p>この研修への参加は、単なるスキルアップの機会ではありません。「会社の未来をつくるリーダーになってほしい」という、経営からの期待と信頼の証です。</p>
+
+  <!-- 研修で身につけること -->
+  <h2><span class="section-number">3</span>研修で身につけること ― 3つの変革</h2>
+
+  <div class="transform-grid">
+    <div class="transform-card">
+      <span class="number">1</span><span class="label">意識の変革</span>
+      <p>「自分は管理職である」という自覚と覚悟を持つ。<br>経営理念を自分の言葉で語れる力を身につける。</p>
+    </div>
+    <div class="transform-card">
+      <span class="number">2</span><span class="label">対話力の変革</span>
+      <p>部下の話を傾聴し、成長を引き出す力を養う。<br>会議をリードするファシリテーション力を身につける。</p>
+    </div>
+    <div class="transform-card">
+      <span class="number">3</span><span class="label">思考の変革</span>
+      <p>問題を構造的に捉え、戦略的に解決する力を養う。<br>経営者目線で課題を俯瞰する力を身につける。</p>
+    </div>
+  </div>
+
+  <!-- 研修の全体像 -->
+  <div class="page-break"></div>
+  <h2><span class="section-number">4</span>研修の全体像 ― 全12回カリキュラム</h2>
+
+  <table>
+    <thead>
+      <tr><th style="width:50px;">回</th><th>テーマ</th><th>主要キーワード</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="text-align:center;">第1回</td><td>オリエンテーション＆管理職の役割認識</td><td>経営理念・役割認識</td></tr>
+      <tr><td style="text-align:center;">第2回</td><td>自己理解を深める（MBTI）</td><td>MBTI・自己理解</td></tr>
+      <tr><td style="text-align:center;">第3回</td><td>管理職のコンピテンシーと自己分析</td><td>リーダー像・アセスメント</td></tr>
+      <tr><td style="text-align:center;">第4回</td><td>リーダーシップの本質</td><td>リーダーシップ・SMART</td></tr>
+      <tr><td style="text-align:center;">第5回</td><td>問題解決の技術</td><td>MECE・ロジックツリー</td></tr>
+      <tr><td style="text-align:center;">第6回</td><td>プレゼンテーション技術</td><td>資料作成・伝える力</td></tr>
+      <tr class="highlight"><td style="text-align:center;">第7回</td><td>中間報告会</td><td>成果発表・FB</td></tr>
+      <tr><td style="text-align:center;">第8回</td><td>対話の技術① カウンセリング</td><td>傾聴・共感</td></tr>
+      <tr><td style="text-align:center;">第9回</td><td>対話の技術② コーチング</td><td>GROW・質問技術</td></tr>
+      <tr><td style="text-align:center;">第10回</td><td>会議ファシリテーション<br><span class="note">※財務をテーマとする回に変更となる場合があります</span></td><td>会議改革</td></tr>
+      <tr><td style="text-align:center;">第11回</td><td>事業戦略（2日間合宿）</td><td>SWOT・3C・戦略思考</td></tr>
+      <tr class="highlight"><td style="text-align:center;">第12回</td><td>最終報告会</td><td>決意表明</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note">※ 各回 終日研修（9:00〜17:00）、月1回実施。第11回のみ2日間合宿形式。<br>
+  ※ 毎回冒頭に社長講話・2分間スピーチ・振り返り・活動報告シェアを実施。</p>
+
+  <!-- 研修の進め方 -->
+  <h2><span class="section-number">5</span>研修の進め方</h2>
+
+  <div class="flow-box">
+    <table>
+      <tr><td>【毎回の流れ】</td><td>社長講話 → 2分間スピーチ → 前回振り返り → 本編 → 実践計画</td></tr>
+      <tr><td>【研修後】</td><td>振り返りシートに学びと実践計画を記入 → 上司に報告</td></tr>
+      <tr><td>【次回まで】</td><td>職場で実践 → 振り返り → 次回に報告</td></tr>
+      <tr><td>【課題図書】</td><td>4回分程度を予定（事前に案内します）</td></tr>
+    </table>
+  </div>
+
+  <!-- 皆さんへのお願い -->
+  <h2><span class="section-number">6</span>皆さんへのお願い</h2>
+
+  <div class="request-box">
+    <p><span class="check">&#10003;</span>全12回、必ず出席してください</p>
+    <p><span class="check">&#10003;</span>「受け身」ではなく「主体的」に参加してください</p>
+    <p><span class="check">&#10003;</span>学んだことは必ず職場で実践してください</p>
+    <p><span class="check">&#10003;</span>仲間とともに切磋琢磨してください</p>
+  </div>
+
+  <!-- メッセージ -->
+  <div class="closing">
+    <p>皆さんの成長が、大晃産業の未来をつくります。</p>
+    <p>共に学び、共に成長する12ヶ月間にしましょう。</p>
+  </div>
+
+  <div class="signature">
+    <p class="company-name">株式会社えんのした</p>
+    <p>代表取締役　川路 隆志</p>
+  </div>
+
+</div>
+
+</body>
+</html>
