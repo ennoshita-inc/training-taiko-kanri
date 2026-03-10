@@ -24,8 +24,13 @@
 
   /* ── Cover ── */
   .cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 80px 40px 60px;
+    min-height: 100vh;
+    padding: 60px 40px;
     page-break-after: always;
   }
   .cover-label {
@@ -35,36 +40,39 @@
     font-size: 11pt;
     padding: 6px 32px;
     letter-spacing: 3px;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
   .cover-title {
     font-size: 22pt;
     font-weight: 700;
     color: #1a3a5c;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     letter-spacing: 2px;
-  }
-  .cover-subtitle {
-    font-size: 13pt;
-    color: #1a3a5c;
-    margin-bottom: 50px;
   }
   .cover-line {
     width: 60px;
     height: 3px;
     background: #c8a45a;
-    margin: 0 auto 50px;
+    margin: 32px auto 36px;
+  }
+  .cover-catch {
+    font-size: 11pt;
+    color: #555;
+    margin-bottom: 48px;
   }
   .cover-intro {
-    text-align: left;
-    max-width: 560px;
+    text-align: center;
+    max-width: 520px;
     margin: 0 auto;
     font-size: 10.5pt;
-    line-height: 2;
+    line-height: 2.2;
     color: #333;
   }
+  .cover-intro p {
+    text-align: center;
+  }
   .cover-footer {
-    margin-top: 60px;
+    margin-top: 64px;
     font-size: 10pt;
     color: #666;
   }
@@ -72,6 +80,7 @@
     font-size: 12pt;
     font-weight: 600;
     color: #1a3a5c;
+    margin-bottom: 4px;
   }
 
   /* ── Content ── */
@@ -79,6 +88,12 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 0 20px;
+  }
+
+  /* Section block: prevent break inside */
+  .section {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .section-number {
@@ -259,7 +274,9 @@
     color: #888;
   }
 
+  /* Page break utilities */
   .page-break {
+    break-before: page;
     page-break-before: always;
   }
 </style>
@@ -271,10 +288,12 @@
   <div class="cover-label">ご 案 内</div>
   <h1 class="cover-title">「管理職候補育成プログラム」のご案内</h1>
   <div class="cover-line"></div>
-  <p class="cover-subtitle" style="font-size:11pt; color:#555;">～ 次世代リーダーとしての第一歩 ～</p>
+  <p class="cover-catch">～ 次世代リーダーとしての第一歩 ～</p>
 
   <div class="cover-intro">
-    <p>このたび、皆さんは株式会社大晃産業の将来を担う次世代リーダー候補として、「管理職候補育成プログラム」に選抜されました。</p>
+    <p>このたび、皆さんは株式会社大晃産業の将来を担う<br>
+    次世代リーダー候補として、<br>
+    「管理職候補育成プログラム」に選抜されました。</p>
   </div>
 
   <div class="cover-footer">
@@ -286,96 +305,107 @@
 <!-- ================= 本文 ================= -->
 <div class="content">
 
-  <!-- なぜこの研修を実施するのか -->
-  <h2><span class="section-number">1</span>なぜこの研修を実施するのか</h2>
+  <!-- 1. なぜこの研修を実施するのか -->
+  <div class="section">
+    <h2><span class="section-number">1</span>なぜこの研修を実施するのか</h2>
 
-  <p>会社は今、大きな転換期を迎えています。これまで培ってきた「人を大切にする」企業文化を土台に、さらに成長していくためには、部門を率いるリーダーの力が不可欠です。</p>
+    <p>会社は今、大きな転換期を迎えています。これまで培ってきた「人を大切にする」企業文化を土台に、さらに成長していくためには、部門を率いるリーダーの力が不可欠です。</p>
 
-  <p>皆さんには、プレイヤーとしての優れた実績があります。しかし、これからは「自分が成果を出す」だけでなく、「チームで成果を出す」マネジメントの視点が求められます。この研修は、その転換を支援するために設計されました。</p>
+    <p>皆さんには、プレイヤーとしての優れた実績があります。しかし、これからは「自分が成果を出す」だけでなく、「チームで成果を出す」マネジメントの視点が求められます。この研修は、その転換を支援するために設計されました。</p>
+  </div>
 
-  <!-- なぜあなたが選ばれたのか -->
-  <h2><span class="section-number">2</span>なぜあなたが選ばれたのか</h2>
+  <!-- 2. なぜあなたが選ばれたのか -->
+  <div class="section">
+    <h2><span class="section-number">2</span>なぜあなたが選ばれたのか</h2>
 
-  <p>皆さんが選ばれた理由は明確です。それは、会社が皆さんの可能性を信じ、将来の経営を任せたいと考えているからです。</p>
+    <p>皆さんが選ばれた理由は明確です。それは、会社が皆さんの可能性を信じ、将来の経営を任せたいと考えているからです。</p>
 
-  <p>この研修への参加は、単なるスキルアップの機会ではありません。「会社の未来をつくるリーダーになってほしい」という、経営からの期待と信頼の証です。</p>
+    <p>この研修への参加は、単なるスキルアップの機会ではありません。「会社の未来をつくるリーダーになってほしい」という、経営からの期待と信頼の証です。</p>
+  </div>
 
-  <!-- 研修で身につけること -->
-  <h2><span class="section-number">3</span>研修で身につけること ― 3つの変革</h2>
+  <!-- 3. 研修で身につけること -->
+  <div class="section">
+    <h2><span class="section-number">3</span>研修で身につけること ― 3つの変革</h2>
 
-  <div class="transform-grid">
-    <div class="transform-card">
-      <span class="number">1</span><span class="label">意識の変革</span>
-      <p>「自分は管理職である」という自覚と覚悟を持つ。<br>経営理念を自分の言葉で語れる力を身につける。</p>
-    </div>
-    <div class="transform-card">
-      <span class="number">2</span><span class="label">対話力の変革</span>
-      <p>部下の話を傾聴し、成長を引き出す力を養う。<br>会議をリードするファシリテーション力を身につける。</p>
-    </div>
-    <div class="transform-card">
-      <span class="number">3</span><span class="label">思考の変革</span>
-      <p>問題を構造的に捉え、戦略的に解決する力を養う。<br>経営者目線で課題を俯瞰する力を身につける。</p>
+    <div class="transform-grid">
+      <div class="transform-card">
+        <span class="number">1</span><span class="label">意識の変革</span>
+        <p>「自分は管理職である」という自覚と覚悟を持つ。<br>経営理念を自分の言葉で語れる力を身につける。</p>
+      </div>
+      <div class="transform-card">
+        <span class="number">2</span><span class="label">対話力の変革</span>
+        <p>部下の話を傾聴し、成長を引き出す力を養う。<br>会議をリードするファシリテーション力を身につける。</p>
+      </div>
+      <div class="transform-card">
+        <span class="number">3</span><span class="label">思考の変革</span>
+        <p>問題を構造的に捉え、戦略的に解決する力を養う。<br>経営者目線で課題を俯瞰する力を身につける。</p>
+      </div>
     </div>
   </div>
 
-  <!-- 研修の全体像 -->
+  <!-- 4. 研修の全体像 -->
   <div class="page-break"></div>
-  <h2><span class="section-number">4</span>研修の全体像 ― 全12回カリキュラム</h2>
+  <div class="section">
+    <h2><span class="section-number">4</span>研修の全体像 ― 全12回カリキュラム</h2>
 
-  <table>
-    <thead>
-      <tr><th style="width:50px;">回</th><th>テーマ</th><th>主要キーワード</th></tr>
-    </thead>
-    <tbody>
-      <tr><td style="text-align:center;">第1回</td><td>オリエンテーション＆管理職の役割認識</td><td>経営理念・役割認識</td></tr>
-      <tr><td style="text-align:center;">第2回</td><td>自己理解を深める（MBTI）</td><td>MBTI・自己理解</td></tr>
-      <tr><td style="text-align:center;">第3回</td><td>管理職のコンピテンシーと自己分析</td><td>リーダー像・アセスメント</td></tr>
-      <tr><td style="text-align:center;">第4回</td><td>リーダーシップの本質</td><td>リーダーシップ・SMART</td></tr>
-      <tr><td style="text-align:center;">第5回</td><td>問題解決の技術</td><td>MECE・ロジックツリー</td></tr>
-      <tr><td style="text-align:center;">第6回</td><td>プレゼンテーション技術</td><td>資料作成・伝える力</td></tr>
-      <tr class="highlight"><td style="text-align:center;">第7回</td><td>中間報告会</td><td>成果発表・FB</td></tr>
-      <tr><td style="text-align:center;">第8回</td><td>対話の技術① カウンセリング</td><td>傾聴・共感</td></tr>
-      <tr><td style="text-align:center;">第9回</td><td>対話の技術② コーチング</td><td>GROW・質問技術</td></tr>
-      <tr><td style="text-align:center;">第10回</td><td>会議ファシリテーション<br><span class="note">※財務をテーマとする回に変更となる場合があります</span></td><td>会議改革</td></tr>
-      <tr><td style="text-align:center;">第11回</td><td>事業戦略（2日間合宿）</td><td>SWOT・3C・戦略思考</td></tr>
-      <tr class="highlight"><td style="text-align:center;">第12回</td><td>最終報告会</td><td>決意表明</td></tr>
-    </tbody>
-  </table>
-
-  <p class="note">※ 各回 終日研修（9:00〜17:00）、月1回実施。第11回のみ2日間合宿形式。<br>
-  ※ 毎回冒頭に社長講話・2分間スピーチ・振り返り・活動報告シェアを実施。</p>
-
-  <!-- 研修の進め方 -->
-  <h2><span class="section-number">5</span>研修の進め方</h2>
-
-  <div class="flow-box">
     <table>
-      <tr><td>【毎回の流れ】</td><td>社長講話 → 2分間スピーチ → 前回振り返り → 本編 → 実践計画</td></tr>
-      <tr><td>【研修後】</td><td>振り返りシートに学びと実践計画を記入 → 上司に報告</td></tr>
-      <tr><td>【次回まで】</td><td>職場で実践 → 振り返り → 次回に報告</td></tr>
-      <tr><td>【課題図書】</td><td>4回分程度を予定（事前に案内します）</td></tr>
+      <thead>
+        <tr><th style="width:50px;">回</th><th>テーマ</th><th>主要キーワード</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="text-align:center;">第1回</td><td>オリエンテーション＆管理職の役割認識</td><td>経営理念・役割認識</td></tr>
+        <tr><td style="text-align:center;">第2回</td><td>自己理解を深める（MBTI）</td><td>MBTI・自己理解</td></tr>
+        <tr><td style="text-align:center;">第3回</td><td>管理職のコンピテンシーと自己分析</td><td>リーダー像・アセスメント</td></tr>
+        <tr><td style="text-align:center;">第4回</td><td>リーダーシップの本質</td><td>リーダーシップ・SMART</td></tr>
+        <tr><td style="text-align:center;">第5回</td><td>問題解決の技術</td><td>MECE・ロジックツリー</td></tr>
+        <tr><td style="text-align:center;">第6回</td><td>プレゼンテーション技術</td><td>資料作成・伝える力</td></tr>
+        <tr class="highlight"><td style="text-align:center;">第7回</td><td>中間報告会</td><td>成果発表・FB</td></tr>
+        <tr><td style="text-align:center;">第8回</td><td>対話の技術① カウンセリング</td><td>傾聴・共感</td></tr>
+        <tr><td style="text-align:center;">第9回</td><td>対話の技術② コーチング</td><td>GROW・質問技術</td></tr>
+        <tr><td style="text-align:center;">第10回</td><td>会議ファシリテーション<br><span class="note">※財務をテーマとする回に変更となる場合があります</span></td><td>会議改革</td></tr>
+        <tr><td style="text-align:center;">第11回</td><td>事業戦略（2日間合宿）</td><td>SWOT・3C・戦略思考</td></tr>
+        <tr class="highlight"><td style="text-align:center;">第12回</td><td>最終報告会</td><td>決意表明</td></tr>
+      </tbody>
     </table>
+
+    <p class="note">※ 各回 終日研修（9:00〜17:00）、月1回実施。第11回のみ2日間合宿形式。<br>
+    ※ 毎回冒頭に社長講話・2分間スピーチ・振り返り・活動報告シェアを実施。</p>
   </div>
 
-  <!-- 皆さんへのお願い -->
-  <h2><span class="section-number">6</span>皆さんへのお願い</h2>
+  <!-- 5. 研修の進め方 + 6. お願い + メッセージ -->
+  <div class="page-break"></div>
+  <div class="section">
+    <h2><span class="section-number">5</span>研修の進め方</h2>
 
-  <div class="request-box">
-    <p><span class="check">&#10003;</span>全12回、必ず出席してください</p>
-    <p><span class="check">&#10003;</span>「受け身」ではなく「主体的」に参加してください</p>
-    <p><span class="check">&#10003;</span>学んだことは必ず職場で実践してください</p>
-    <p><span class="check">&#10003;</span>仲間とともに切磋琢磨してください</p>
+    <div class="flow-box">
+      <table>
+        <tr><td>【毎回の流れ】</td><td>社長講話 → 2分間スピーチ → 前回振り返り → 本編 → 実践計画</td></tr>
+        <tr><td>【研修後】</td><td>振り返りシートに学びと実践計画を記入 → 上司に報告</td></tr>
+        <tr><td>【次回まで】</td><td>職場で実践 → 振り返り → 次回に報告</td></tr>
+        <tr><td>【課題図書】</td><td>4回分程度を予定（事前に案内します）</td></tr>
+      </table>
+    </div>
   </div>
 
-  <!-- メッセージ -->
-  <div class="closing">
-    <p>皆さんの成長が、大晃産業の未来をつくります。</p>
-    <p>共に学び、共に成長する12ヶ月間にしましょう。</p>
-  </div>
+  <div class="section">
+    <h2><span class="section-number">6</span>皆さんへのお願い</h2>
 
-  <div class="signature">
-    <p class="company-name">株式会社えんのした</p>
-    <p>代表取締役　川路 隆志</p>
+    <div class="request-box">
+      <p><span class="check">&#10003;</span>全12回、必ず出席してください</p>
+      <p><span class="check">&#10003;</span>「受け身」ではなく「主体的」に参加してください</p>
+      <p><span class="check">&#10003;</span>学んだことは必ず職場で実践してください</p>
+      <p><span class="check">&#10003;</span>仲間とともに切磋琢磨してください</p>
+    </div>
+
+    <div class="closing">
+      <p>皆さんの成長が、大晃産業の未来をつくります。</p>
+      <p>共に学び、共に成長する12ヶ月間にしましょう。</p>
+    </div>
+
+    <div class="signature">
+      <p class="company-name">株式会社えんのした</p>
+      <p>代表取締役　川路 隆志</p>
+    </div>
   </div>
 
 </div>

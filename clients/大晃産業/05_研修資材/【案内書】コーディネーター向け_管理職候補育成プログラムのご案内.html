@@ -24,8 +24,13 @@
 
   /* ── Cover Section ── */
   .cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 80px 40px 60px;
+    min-height: 100vh;
+    padding: 60px 40px;
     page-break-after: always;
   }
   .cover-label {
@@ -35,36 +40,44 @@
     font-size: 11pt;
     padding: 6px 32px;
     letter-spacing: 3px;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
   .cover-title {
     font-size: 22pt;
     font-weight: 700;
     color: #1a3a5c;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     letter-spacing: 2px;
   }
   .cover-subtitle {
     font-size: 13pt;
     color: #1a3a5c;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   .cover-line {
     width: 60px;
     height: 3px;
     background: #c8a45a;
-    margin: 0 auto 50px;
+    margin: 32px auto 36px;
+  }
+  .cover-catch {
+    font-size: 11pt;
+    color: #555;
+    margin-bottom: 48px;
   }
   .cover-intro {
-    text-align: left;
-    max-width: 560px;
+    text-align: center;
+    max-width: 520px;
     margin: 0 auto;
     font-size: 10.5pt;
-    line-height: 2;
+    line-height: 2.2;
     color: #333;
   }
+  .cover-intro p {
+    text-align: center;
+  }
   .cover-footer {
-    margin-top: 60px;
+    margin-top: 64px;
     font-size: 10pt;
     color: #666;
   }
@@ -72,6 +85,7 @@
     font-size: 12pt;
     font-weight: 600;
     color: #1a3a5c;
+    margin-bottom: 4px;
   }
 
   /* ── Content Pages ── */
@@ -79,6 +93,12 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 0 20px;
+  }
+
+  /* Section block: prevent break inside */
+  .section {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   /* Section Headings */
@@ -208,7 +228,9 @@
     color: #888;
   }
 
+  /* Page break utilities */
   .page-break {
+    break-before: page;
     page-break-before: always;
   }
 </style>
@@ -221,14 +243,15 @@
   <h1 class="cover-title">「管理職候補育成プログラム」</h1>
   <p class="cover-subtitle">コーディネーターのご案内</p>
   <div class="cover-line"></div>
-  <p class="cover-subtitle" style="font-size:11pt; color:#555;">～ 次世代リーダーを育てる、あなたの役割 ～</p>
+  <p class="cover-catch">～ 次世代リーダーを育てる、あなたの役割 ～</p>
 
   <div class="cover-intro">
     <p>このたび、管理職候補育成プログラムにおいて、<br>
     コーディネーターとしてのご参加をお願いすることとなりました。</p>
     <p>本研修の成否は、研修の場だけでなく、<br>
     職場での実践とフィードバックの質にかかっています。<br>
-    コーディネーターの皆さまの存在が、塾生の成長を大きく左右します。</p>
+    コーディネーターの皆さまの存在が、<br>
+    塾生の成長を大きく左右します。</p>
   </div>
 
   <div class="cover-footer">
@@ -241,116 +264,128 @@
 <div class="content">
 
   <!-- 1. コーディネーターの位置づけ -->
-  <h2><span class="section-number">1</span>コーディネーターの位置づけ</h2>
+  <div class="section">
+    <h2><span class="section-number">1</span>コーディネーターの位置づけ</h2>
 
-  <p>本研修は「塾」の形式で運営します。</p>
+    <p>本研修は「塾」の形式で運営します。</p>
 
-  <table class="role-table">
-    <thead>
-      <tr><th>役割</th><th>対象</th><th>人数</th><th>概要</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>塾長</td><td>経営層</td><td>1名</td>
-        <td>研修全体の最高責任者。オブザーブ参加。</td>
-      </tr>
-      <tr>
-        <td>コーディネーター</td><td>部長クラス</td><td>4名</td>
-        <td>各チームのリーダー・メンター役。研修には必ず出席。</td>
-      </tr>
-      <tr>
-        <td>塾生</td><td>課長・次長クラス</td><td>12名</td>
-        <td>研修の受講生。4チーム編成。</td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="role-table">
+      <thead>
+        <tr><th>役割</th><th>対象</th><th>人数</th><th>概要</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>塾長</td><td>経営層</td><td>1名</td>
+          <td>研修全体の最高責任者。オブザーブ参加。</td>
+        </tr>
+        <tr>
+          <td>コーディネーター</td><td>部長クラス</td><td>4名</td>
+          <td>各チームのリーダー・メンター役。研修には必ず出席。</td>
+        </tr>
+        <tr>
+          <td>塾生</td><td>課長・次長クラス</td><td>12名</td>
+          <td>研修の受講生。4チーム編成。</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <p>コーディネーターは、単なるオブザーバーではありません。<br>
-  塾生3名を担当し、研修での学びを職場実践につなげる「伴走者」としての役割を担っていただきます。</p>
+    <p>コーディネーターは、単なるオブザーバーではありません。<br>
+    塾生3名を担当し、研修での学びを職場実践につなげる「伴走者」としての役割を担っていただきます。</p>
+  </div>
 
   <!-- 2. コーディネーターに期待する役割 -->
-  <h2><span class="section-number">2</span>コーディネーターに期待する役割</h2>
+  <div class="page-break"></div>
+  <div class="section">
+    <h2><span class="section-number">2</span>コーディネーターに期待する役割</h2>
 
-  <h3>① 研修前（各回）</h3>
-  <ul>
-    <li>塾生との事前面談（15分程度）</li>
-    <li>研修テーマに関連する職場課題の確認</li>
-    <li>前回の実践計画の進捗確認</li>
-  </ul>
+    <h3>① 研修前（各回）</h3>
+    <ul>
+      <li>塾生との事前面談（15分程度）</li>
+      <li>研修テーマに関連する職場課題の確認</li>
+      <li>前回の実践計画の進捗確認</li>
+    </ul>
 
-  <h3>② 研修当日</h3>
-  <ul>
-    <li><strong>研修には必ず出席</strong>してください</li>
-    <li>各グループの中に入り、塾生へのアドバイスやサポートを行う</li>
-    <li>場合によっては、研修のワークにも参加していただく</li>
-    <li>一時講師として、ご自身の経験や見解を述べていただく場合がある</li>
-    <li>塾生の発表に対するコメント・フィードバック</li>
-  </ul>
+    <h3>② 研修当日</h3>
+    <ul>
+      <li><strong>研修には必ず出席</strong>してください</li>
+      <li>各グループの中に入り、塾生へのアドバイスやサポートを行う</li>
+      <li>場合によっては、研修のワークにも参加していただく</li>
+      <li>一時講師として、ご自身の経験や見解を述べていただく場合がある</li>
+      <li>塾生の発表に対するコメント・フィードバック</li>
+    </ul>
 
-  <h3>③ 研修後（次回まで）</h3>
-  <ul>
-    <li>振り返りシートの確認・署名（10分程度）</li>
-    <li>塾生の実践行動の観察</li>
-    <li>適宜声かけ・フィードバック</li>
-  </ul>
+    <h3>③ 研修後（次回まで）</h3>
+    <ul>
+      <li>振り返りシートの確認・署名（10分程度）</li>
+      <li>塾生の実践行動の観察</li>
+      <li>適宜声かけ・フィードバック</li>
+    </ul>
 
-  <h3>④ 中間報告会・最終報告会</h3>
-  <ul>
-    <li><strong>必ず出席</strong>をお願いいたします</li>
-    <li>担当塾生の報告に対する評価コメント</li>
-    <li>今後の期待の表明</li>
-  </ul>
+    <h3>④ 中間報告会・最終報告会</h3>
+    <ul>
+      <li><strong>必ず出席</strong>をお願いいたします</li>
+      <li>担当塾生の報告に対する評価コメント</li>
+      <li>今後の期待の表明</li>
+    </ul>
+  </div>
 
   <!-- 3. コーディネーターとしての心構え -->
-  <h2><span class="section-number">3</span>コーディネーターとしての心構え</h2>
+  <div class="section">
+    <h2><span class="section-number">3</span>コーディネーターとしての心構え</h2>
 
-  <div class="mindset-box">
-    <p>■　「教える」のではなく「引き出す」姿勢で</p>
-    <p>■　塾生の挑戦を見守り、失敗も学びとして受け止める</p>
-    <p>■　自身も共に学ぶ姿勢を大切にする</p>
-    <p>■　塾生が安心して本音を語れる関係性をつくる</p>
+    <div class="mindset-box">
+      <p>■　「教える」のではなく「引き出す」姿勢で</p>
+      <p>■　塾生の挑戦を見守り、失敗も学びとして受け止める</p>
+      <p>■　自身も共に学ぶ姿勢を大切にする</p>
+      <p>■　塾生が安心して本音を語れる関係性をつくる</p>
+    </div>
   </div>
 
   <!-- 4. 研修スケジュール概要 -->
   <div class="page-break"></div>
-  <h2><span class="section-number">4</span>研修スケジュール概要（全12回）</h2>
+  <div class="section">
+    <h2><span class="section-number">4</span>研修スケジュール概要（全12回）</h2>
 
-  <table>
-    <thead>
-      <tr><th style="width:50px;">回</th><th>テーマ</th><th>主要キーワード</th></tr>
-    </thead>
-    <tbody>
-      <tr><td style="text-align:center;">第1回</td><td>オリエンテーション＆管理職の役割認識</td><td>経営理念・役割認識</td></tr>
-      <tr><td style="text-align:center;">第2回</td><td>自己理解を深める（MBTI）</td><td>MBTI・自己理解</td></tr>
-      <tr><td style="text-align:center;">第3回</td><td>管理職のコンピテンシーと自己分析</td><td>リーダー像・アセスメント</td></tr>
-      <tr><td style="text-align:center;">第4回</td><td>リーダーシップの本質</td><td>リーダーシップ・SMART</td></tr>
-      <tr><td style="text-align:center;">第5回</td><td>問題解決の技術</td><td>MECE・ロジックツリー</td></tr>
-      <tr><td style="text-align:center;">第6回</td><td>プレゼンテーション技術</td><td>資料作成・伝える力</td></tr>
-      <tr class="highlight"><td style="text-align:center;">第7回</td><td>中間報告会</td><td>成果発表・FB</td></tr>
-      <tr><td style="text-align:center;">第8回</td><td>対話の技術① カウンセリング</td><td>傾聴・共感</td></tr>
-      <tr><td style="text-align:center;">第9回</td><td>対話の技術② コーチング</td><td>GROW・質問技術</td></tr>
-      <tr><td style="text-align:center;">第10回</td><td>会議ファシリテーション<br><span class="note">※財務をテーマとする回に変更となる場合があります</span></td><td>会議改革</td></tr>
-      <tr><td style="text-align:center;">第11回</td><td>事業戦略（2日間合宿）</td><td>SWOT・3C・戦略思考</td></tr>
-      <tr class="highlight"><td style="text-align:center;">第12回</td><td>最終報告会</td><td>決意表明</td></tr>
-    </tbody>
-  </table>
+    <table>
+      <thead>
+        <tr><th style="width:50px;">回</th><th>テーマ</th><th>主要キーワード</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="text-align:center;">第1回</td><td>オリエンテーション＆管理職の役割認識</td><td>経営理念・役割認識</td></tr>
+        <tr><td style="text-align:center;">第2回</td><td>自己理解を深める（MBTI）</td><td>MBTI・自己理解</td></tr>
+        <tr><td style="text-align:center;">第3回</td><td>管理職のコンピテンシーと自己分析</td><td>リーダー像・アセスメント</td></tr>
+        <tr><td style="text-align:center;">第4回</td><td>リーダーシップの本質</td><td>リーダーシップ・SMART</td></tr>
+        <tr><td style="text-align:center;">第5回</td><td>問題解決の技術</td><td>MECE・ロジックツリー</td></tr>
+        <tr><td style="text-align:center;">第6回</td><td>プレゼンテーション技術</td><td>資料作成・伝える力</td></tr>
+        <tr class="highlight"><td style="text-align:center;">第7回</td><td>中間報告会</td><td>成果発表・FB</td></tr>
+        <tr><td style="text-align:center;">第8回</td><td>対話の技術① カウンセリング</td><td>傾聴・共感</td></tr>
+        <tr><td style="text-align:center;">第9回</td><td>対話の技術② コーチング</td><td>GROW・質問技術</td></tr>
+        <tr><td style="text-align:center;">第10回</td><td>会議ファシリテーション<br><span class="note">※財務をテーマとする回に変更となる場合があります</span></td><td>会議改革</td></tr>
+        <tr><td style="text-align:center;">第11回</td><td>事業戦略（2日間合宿）</td><td>SWOT・3C・戦略思考</td></tr>
+        <tr class="highlight"><td style="text-align:center;">第12回</td><td>最終報告会</td><td>決意表明</td></tr>
+      </tbody>
+    </table>
 
-  <p class="note">※ 各回 終日研修（9:00〜17:00）、月1回実施。第11回のみ2日間合宿形式。<br>
-  ※ 毎回冒頭に社長講話・2分間スピーチ・振り返り・活動報告シェアを実施。</p>
-
-  <!-- 5. お願い -->
-  <h2><span class="section-number">5</span>お願い</h2>
-
-  <div class="closing">
-    <p>塾生たちは、皆さんの背中を見て育ちます。</p>
-    <p>コーディネーターとしてのご参加そのものが、<br>
-    「人を育てることを大切にする組織」というメッセージを伝えることになります。</p>
-    <p>次世代リーダーの育成に、ぜひお力添えください。</p>
+    <p class="note">※ 各回 終日研修（9:00〜17:00）、月1回実施。第11回のみ2日間合宿形式。<br>
+    ※ 毎回冒頭に社長講話・2分間スピーチ・振り返り・活動報告シェアを実施。</p>
   </div>
 
-  <div class="signature">
-    <p class="company-name">株式会社えんのした</p>
-    <p>代表取締役　川路 隆志</p>
+  <!-- 5. お願い -->
+  <div class="page-break"></div>
+  <div class="section">
+    <h2><span class="section-number">5</span>お願い</h2>
+
+    <div class="closing">
+      <p>塾生たちは、皆さんの背中を見て育ちます。</p>
+      <p>コーディネーターとしてのご参加そのものが、<br>
+      「人を育てることを大切にする組織」というメッセージを伝えることになります。</p>
+      <p>次世代リーダーの育成に、ぜひお力添えください。</p>
+    </div>
+
+    <div class="signature">
+      <p class="company-name">株式会社えんのした</p>
+      <p>代表取締役　川路 隆志</p>
+    </div>
   </div>
 
 </div>
